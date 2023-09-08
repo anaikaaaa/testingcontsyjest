@@ -1,7 +1,10 @@
 import { Contacto, contactos } from "./contactos";
 
-function findByEmail(correo:string) : Contacto[] {
-    return contactos.filter(contacto=> contacto.email === correo)
+function findByEmail(parteDeUnCorreo:string) : Contacto[] {
+    if(parteDeUnCorreo == ""){
+        return contactos;
+    }
+    return contactos.filter(contacto=> contacto.email.includes(parteDeUnCorreo))
     
 }
 
